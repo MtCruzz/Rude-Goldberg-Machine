@@ -85,6 +85,7 @@
             fase6();
             fase7(bounceSound);
             fase8();
+            fase9();
 
             gui();
             skybox();
@@ -415,7 +416,7 @@
 
         }
 
-        function fase8() { //boliche
+        function fase8() { //tunel e rampa para o boliche
             box(73.2, -72, -1.0, 8, 0.3, 0.3, 0);
             box(72, -72, 0.2, 8, 0.3, 0.3, 0);
             box(72, -72, -2.2, 8, 0.3, 0.3, 0);
@@ -430,6 +431,11 @@
 
             box1.material = mat2;
 
+            box1.physicsImpostor = new BABYLON.PhysicsImpostor(box1, BABYLON.PhysicsImpostor.BoxImpostor, { mass: 0 }, scene);
+
+        }
+
+        function fase9() {
             box(57.8, -84.9, -1, 0.2, 10, 8, 0);
 
             pinoBoliche(58, -83.7, -1);
@@ -446,8 +452,6 @@
             pinoBoliche(55.75, -83.7, -1.4);
             pinoBoliche(55.75, -83.7, -0.6);
             pinoBoliche(55.75, -83.7, 0.2);
-
-            box1.physicsImpostor = new BABYLON.PhysicsImpostor(box1, BABYLON.PhysicsImpostor.BoxImpostor, { mass: 0 }, scene);
 
         }
 
